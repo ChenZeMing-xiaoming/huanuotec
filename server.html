@@ -1,0 +1,110 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <base target="_blank">
+    <link href="chatWindowcss.css" rel="stylesheet" type="text/css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="serverchatWindowJs.js"></script>
+    <script src="serverserver.js"></script>
+    <title>对话窗口</title>
+    <style type="text/css">
+
+    </style>
+    <script>
+
+    </script>
+</head>
+
+
+<body  scroll="no">
+<div class="peoplelist" id="peoplelist">
+
+</div>
+<p id="firstp" style="margin-top: 30px; display: none;" align="center">正在呼叫在线客服人员，请稍候...<br></p>
+<div id="chatwrap" style="">
+    <div id="header" style="position: absolute; top: 0px; display: block; height: 0px;">
+        <div id="headerBox" class="toptitle" style="background-color: #00a6f1"><a href="tel:15713868295"
+                                                                                  onclick="called=c118;"><img
+                id="phoneimg" src="ChatM3Img/phone1.png">
+            <p>15713868295</p></a></div>
+        <div class="topclose" style="right:40px"></div>
+        <div class="topclose"><img id="closeWindow" src="ChatM3Img/down.png" border="0"
+                                   onclick="hideme();"></div>
+    </div>
+    <div id="mainContent" onclick="$('emotionsBox').style.display = $('emotionsBox1').style.display = 'none';"
+         style="margin-top: 0px; position: fixed; top: 42px; bottom: 65px; padding-bottom: 0px;">
+        <div id="chatMessageArea" style="position: absolute; width: 100%;">
+
+        </div>
+    </div>
+    <div id="footer" style="position: fixed; height: 65px; bottom: 0px;">
+        <ul style="display:none;" id="emotionsBox" ></ul>
+        <ul style="display:none;" id="emotionsBox1" ></ul>
+        <style type="text/css">#lr_question_div::-webkit-scrollbar {
+            width: 6px;
+            height: 8px;
+            background-color: transparent;
+        }
+
+        #lr_question_div::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        #lr_question_div::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #c4c4c4;
+        }</style>
+        <div style="display:none;background-color: #fcfcfc;bottom: 66px;width: 100%;position: absolute;height: 40px;overflow-x:auto;overflow-y:hidden;"
+             id="lr_question_div">
+            <ul style="display:-moz-inline-box;" id="lr_question_list"></ul>
+        </div>
+        <div class="bottomsend" id="bottomsend">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="78" align="right" style="padding-right:6px; padding-left:2px;"><img
+                            src="ChatM3Img/emoticon.png" id="emoticon" border="0"
+                            style="cursor:pointer;width:30px;"ontouchstart="emotionClick(); return false" ></td>
+                    <td width="100%" id="toolbar_editor"><textarea id="texteditor" name="texteditor"
+                                                                   onclick="inputclick();"
+                                                                   oninput="inputChange();autoResize()"
+                                                                   onfocus="inputFocus();" onblur="inputBlur();"
+                                                                   class="editor" rows="1" placeholder="请在此输入..."
+                                                                   style="border-bottom-color: rgb(235, 235, 235);"></textarea>
+                    </td>
+                    <td align="right" style="padding-right:2px; padding-left:8px;cursor:pointer;"
+                        ontouchstart="User_Send();return false;"><input type="image"  src="ChatM3Img/button_cn.png" border="0"
+                                                                        style="cursor:pointer;height:30px" id="sentButton">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="bottomtip">
+            <table style="margin-left:10px;height:20px;width:90%;" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td style="vertical-align: middle;color: #bdbebf;" id="td_prompt2">
+                        <div class="zi" align="center">咨询软件由华诺科技提供</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="position: absolute;display: none;  top: 151px;text-align:center;width:100%;z-index: 9999;"
+             id="btnBackChat">
+            <div class="zi" onclick="return false;">点击返回对话窗口
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popDiv" style="display:none;" id="popDiv"></div>
+<script type="text/javascript">
+</script>
+</body>
+</html>
