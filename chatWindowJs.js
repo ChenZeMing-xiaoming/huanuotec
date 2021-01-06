@@ -234,3 +234,7 @@ function LR_checkagent(_lr_na) {
     }
     return false;
 }
+function hideme() {
+    var cmd = {"post": "hide"};
+    window.parent.postMessage(cmd, '*');
+}

@@ -1,0 +1,43 @@
+.previous-next-links{
+    line-height: 24px;
+    overflow: hidden;
+    padding: 10px 30px 10px 30px;
+    background: #fbfbfb;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    color: #8590a6;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+    box-sizing: border-box;
+}
+.all{
+ padding-top: 65px;
+}
+.next-design-link {
+    float: left;
+
+}
+.article-body {
+    padding: 20px ;
+}
+h2 {
+    margin: 0;
+    padding-top: 5px;
+    border-top: 1px solid #d4d4d4;
+    clear: both;
+}
+h1{
+    margin: 0 0 10px 0;
+    font-size: 2.1em;
+}
+.titleshow{
+    display: inline-block;
+
+}
+.titlehide{
+    display: none;
+}
+
+.titlechoise{
+    border-top: 5px solid black;max-height:93%;background-color: #146bae
+}
