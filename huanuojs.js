@@ -1,27 +1,27 @@
 
 
 var index_objs;
-var toptext_objs;
-var topsmalltext_objs;
+
 var xiangxi_btn;
-var myheader;
+var xuanchuan;
 var startx ;
 var starty ;
+var goumais;
+
+var phonenuber=new Array("198****1500","166****3909","182****8867","172****6430","134****6413","165****5392 ","136****8384","139****2773","170****9675","134****2087","184****5280","180****5048","198****1500");
+
 window.onload=function (){
+  console.log(phonenuber.length);
   index_objs= document.getElementsByClassName("index_banner");
-  toptext_objs= document.getElementsByClassName("top_text");
-  topsmalltext_objs= document.getElementsByClassName("top_smalltext");
-  xiangxi_btn=document.getElementById("ccc");
-  myheader=document.getElementById("myheader");
-  xiangxi_btn.addEventListener("animationend",function (){
-    xiangxi_btn.className="xqliaojie";
-  });
-  myheader.addEventListener("touchstart", function(e){
+  xuanchuan=document.getElementById("xuanchuan");
+  goumais=document.getElementById("goumais");
+
+  xuanchuan.addEventListener("touchstart", function(e){
     startx = e.touches[0].pageX;
     starty = e.touches[0].pageY;
   }, false);
 //手指离开屏幕
-  myheader.addEventListener("touchend", function(e) {
+  xuanchuan.addEventListener("touchend", function(e) {
     var endx, endy;
     endx = e.changedTouches[0].pageX;
     endy = e.changedTouches[0].pageY;
@@ -38,6 +38,18 @@ window.onload=function (){
   }, false);
   console.log()
 
+  let times=document.getElementsByClassName("neirong1");
+  let obj=new Date();
+  let time=obj.getFullYear()+"-"+(obj.getMonth()+1)+"-"+obj.getDate();
+  for (let i = 0; i < times.length; i++) {
+    times.item(i).innerHTML=time;
+  }
+  let phones=document.getElementsByClassName("neirong");
+  phoneslenth=phones.length;
+  for (let i = 0; i < phones.length; i++) {
+    phones.item(i).innerHTML=phonenuber[i]+" 已成功下单";
+
+  }
 }
 function getDirection(startx, starty, endx, endy) {
   var angx = endx - startx;
@@ -65,7 +77,7 @@ function click_next_index(obj){
   start_next_index(parseInt( obj.innerHTML) )  ;
   bool_isclick=true ;
 }
-setTimeout(auto_nex_index,4000);
+setTimeout(auto_nex_index,5000);
 function right_index(){
   start_next_index(now_index==0?2:now_index-1);
   bool_isclick=true ;
@@ -87,28 +99,27 @@ function  auto_nex_index(){
     setTimeout(auto_nex_index,4000);
   }
 }
-
-function start_next_index(index){
-
-  index_objs[now_index].className="index_banner";
-  toptext_objs[now_index].className="top_text";
-  topsmalltext_objs[now_index].className="top_smalltext";
-
-
-  index_objs[index].className+=" index_banner_active";
-  toptext_objs[index].className+=" fadeUp";
-  topsmalltext_objs[index].className+=" fadeUp";
-
-
-  if ( xiangxi_btn.getAnimations().length>0)
-  {
-    if ( xiangxi_btn.getAnimations()[0].playState=="running")
-    {
-      xiangxi_btn.getAnimations()[0].currentTime=0;
-    }
+var phoneslenth;
+var phoneindex=0;
+setInterval(function (){
+  if (phoneindex==0){
+    goumais.style.transition="all 0s ease-in";
   }
-  xiangxi_btn.className+=" fadeUpIn";
-  now_index=index;
+  if (phoneindex==1){
+    goumais.style.transition="all 0.3s ease-in";
+  }
+ goumais.style.transform="translateY("+phoneindex*-35+"px)";
 
+  phoneindex++;
+  if (phoneindex==phoneslenth){
+    phoneindex=0;
+  }
+ console.log(11);
+},4000);
+function start_next_index(index){
+  index_objs[now_index].className="index_banner";
+  index_objs[index].className+=" index_banner_active";
+    xuanchuan.className="xuanchuan"+index;
+  now_index=index;
 }
 
