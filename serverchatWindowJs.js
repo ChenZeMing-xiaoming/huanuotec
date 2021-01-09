@@ -24,7 +24,6 @@ function choisepeople(e) {
     e.className="people";
     e.className += " choisepeople";
     now_clientCookie = e.innerHTML;
-    console.log(now_clientCookie);
     showallmsg(clients[e.innerHTML]);
 }
 
@@ -35,13 +34,11 @@ function client(cookie, obj) {
     this.link = true;
     this.msgs = new Array();
     this.titleobj = obj;
-    console.log(this.titleobj);
 }
 
 function User_Send() {
-    console.log(now_clientCookie);
-    console.log($("texteditor").value);
-    rebuildadd($("texteditor").value, "1", true, "1999");
+    console.log(111);
+    rebuildadd($("texteditor").value+"☆", "1", true, "1999");
     socket.emit("chatmessage", now_clientCookie + "◇" + $("texteditor").value);
     clients[now_clientCookie].msgs.push($("texteditor").value + "☆")
     $("texteditor").value = "";
@@ -50,7 +47,6 @@ function User_Send() {
 function anlizeMsgOrnew(m) {
     let cookie = m.split("◇")[0];
     let msg = m.split("◇")[1];
-    console.log(cookie);
     if (!clients[cookie])
         clients[cookie] = new client(cookie, creatpeoplehtml(cookie));
     clients[cookie].msgs.push(msg);
@@ -62,7 +58,6 @@ function anlizeMsgOrnew(m) {
 }
 
 function rebuildadd(m, t, ona, nMsgID) {
-    console.log(hideindex);
     if (hideindex >= 0 && hideindex < $("chatMessageArea").children.length - 1) {
         resetcontent(hideindex, m);
     } else {
@@ -89,24 +84,18 @@ function autochantge(msg, obj) {
 var hideindex = -1;
 
 function showallmsg(people) {
-    console.log(people);
     let are = $("chatMessageArea");
     if (people.msgs.length > are.children.length) {
         hideindex = -1;
     } else {
         hideindex = people.msgs.length;
     }
-    console.log(hideindex);
     for (let i = 0; i < are.children.length; i++) {
         let obj = are.children.item(i);
-        console.log(obj);
         if (people.msgs[i]) {
             let msg = people.msgs[i]
             obj.className = "msg-box";
             autochantge(msg, obj);
-            console.log(obj);
-            console.log(obj.getElementsByClassName("text"));
-            console.log(obj.getElementsByClassName("text").item(0));
 
             obj.getElementsByClassName("text").item(0).innerHTML = people.msgs[i];
         } else {
@@ -116,7 +105,6 @@ function showallmsg(people) {
     if (people.msgs.length > are.children.length) {
         for (let i = are.children.length; i < people.msgs.length; i++) {
             let msg = people.msgs[i];
-            console.log(msg);
             if (msg.match("☆")) {
                 addcontent("", msg, "华诺社保-小鱼 15713868295（同微信）", "1999")
             } else {
@@ -242,7 +230,6 @@ function inputFocus() {
     $("emotionsBox").style.display = $("emotionsBox1").style.display = "none";
     if (window.inputIsFocus) return;
     zhankai = "zhunbei";
-    $("footer").style.bottom = "75px";
     window.inputIsFocus = true;
 }
 

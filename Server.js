@@ -1,4 +1,4 @@
-let socket = io("http://192.168.1.104:3000");
+let socket = io("http://192.168.1.103:3000");
 socket.emit("chatmessage","userconnect");
 socket.on('chatmessage', (data) => {
     showcontent(data,"operator","华诺社保-小鱼 15713868295（同微信）","1999");

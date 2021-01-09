@@ -1,4 +1,4 @@
-let socket = io("http://192.168.1.104:3001");
+let socket = io("http://192.168.1.103:3001");
 
 socket.on('chatmessage', (data) => {
     anlizeMsgOrnew(data);

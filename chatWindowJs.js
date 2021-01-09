@@ -98,7 +98,6 @@ function inputFocus() {
     $("emotionsBox").style.display = $("emotionsBox1").style.display = "none";
     if (window.inputIsFocus) return;
     zhankai = "zhunbei";
-    $("footer").style.bottom = "75px";
     window.inputIsFocus = true;
 }
 zhiding_h = 0;
