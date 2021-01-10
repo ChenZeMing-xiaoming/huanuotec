@@ -1,10 +1,7 @@
-let socket = io("http://192.168.1.103:3000");
-socket.emit("chatmessage","userconnect");
+let socket = io("http://localhost:3000");
+
 socket.on('chatmessage', (data) => {
     showcontent(data,"operator","华诺社保-小鱼 15713868295（同微信）","1999");
-
-    var cmd = {"msg": ""};
-    window.parent.postMessage(cmd, '*');
 });
 socket.on('receiveImg', (data) => {
     let ImgDIV = document.createElement('div');
