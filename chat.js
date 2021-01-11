@@ -1,21 +1,21 @@
 
 
 
-var chat;
+var chatic;
 var chatred;
 var chatnum=0;
 var ischat=false;
 function clickChat(){
     hideRed();
-    chat.className="chatshow";
+    chatic.className="chatshow";
     ischat=true;
     setTimeout(function (){
-        chat.className+=" chatUp";
+        chatic.className+=" chatUp";
     },100)
 }
 function closeChat(){
     chatnum=0;
-    chat.className="chatshow";
+    chatic.className="chatshow";
     ischat=false;
     console.log("hide");
 }

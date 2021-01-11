@@ -9,6 +9,9 @@ io.on('connection', function(socket){
   socket.on('chatmessage', function(msg){
     serversockets?.emit('chatmessage',socket.handshake.headers.cookie+"◇"+msg);
   });
+  socket.on('hangyemessage', function(msg){
+    serversockets?.emit('hangyemessage',socket.handshake.headers.cookie+"◇"+msg);
+  });
 });
 
 http.listen(3000, function(){
@@ -34,6 +37,9 @@ io1.on('connection', function(socket){
   serversockets=socket;
   socket.on('chatmessage', function(msg){
     clientsockets[msg.split("◇")[0]]?.emit('chatmessage',msg.split("◇")[1]);
+  });
+  socket.on('hangyemessage', function(msg){
+    clientsockets[msg.split("◇")[0]]?.emit('hangyemessage',msg.split("◇")[1]);
   });
 });
 http1.listen(3001, function(){

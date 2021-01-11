@@ -43,15 +43,25 @@ function User_Send() {
     clients[now_clientCookie].msgs.push($("texteditor").value + "☆")
     $("texteditor").value = "";
 }
-
-function anlizeMsgOrnew(m) {
+function hangyeUser_Send() {
+    console.log(111);
+    rebuildadd($("texteditor").value+"☆", "1", true, "1999");
+    socket.emit("hangyemessage", now_clientCookie + "◇" + $("texteditor").value);
+    clients[now_clientCookie].msgs.push($("texteditor").value + "☆")
+    $("texteditor").value = "";
+}
+function anlizeMsgOrnew(m,t) {
     let cookie = m.split("◇")[0];
+
     let msg = m.split("◇")[1];
+    if (t=="hangye"){sentButton
+        msg="专家问题解答："+msg;
+    }
     if (!clients[cookie])
         clients[cookie] = new client(cookie, creatpeoplehtml(cookie));
     clients[cookie].msgs.push(msg);
     if (now_clientCookie == cookie)
-        rebuildadd(msg, "operator", "华诺社保-小鱼 15713868295（同微信）", "1999");
+        rebuildadd(msg, t, "华诺社保-小鱼 15713868295（同微信）", "1999");
     else
         clients[cookie].titleobj.className += " chatmsgpeople";
 
@@ -187,8 +197,18 @@ function addcontent(pclass, content, ona, nMsgID) {
         str += "</div>";
         str += "</div>";
         str += "</div>";
-    } else if (pclass == "info") {
-        str = '<div class="msg-box"><div class="msg-system">' + content + "</div></div>";
+    } else if (pclass == "hangye") {
+        var strMsgIDHtml = "";
+        if (nMsgID) {
+            strMsgIDHtml = "id=\"lr_msg" + nMsgID + "\"";
+        }
+        str = '<div class="msg-box" ' + strMsgIDHtml + '>';
+        str += '<div class="msg-agent">';
+        str += '<div class="arrow_box_left">';
+        str += '<div class="text">';
+        str += content;
+        str += "</div></div>";
+        str += "</div></div>";
     } else if (pclass == "operator") {
 
         var strMsgIDHtml = "";
