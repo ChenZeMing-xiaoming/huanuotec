@@ -5,6 +5,7 @@ body{
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
+    background-color: #f7f7f9;
 }
 my{
 
@@ -21,6 +22,39 @@ a{
     top: 0px;
     right: 0px;
     bottom: 0px;
+    z-index: 10;
+}
+.title{
+    border-bottom: 1px solid rgb(245, 245, 245);
+    color: #333!important;
+    margin-top: 0.77em;
+    font-weight: 700;
+    font-size: 15px!important;
+    margin-bottom: 0!important;
+    padding: 10px 15px 10px 15px;
+    align-items: center;
+    display: flex;
+    background-color: #fff!important;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    outline: none;
+    box-sizing: border-box;
+}
+.title_right{
+    font-size: 12px!important;
+    font-weight: normal;
+    text-align: right!important;
+    font-size: 12px!important;
+    float: right!important;
+    overflow: hidden;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    outline: none;
+    box-sizing: border-box;
+    color: #333!important;
 }
 .top_kuang{
     padding: 10px 20px 10px 20px;
@@ -87,7 +121,7 @@ a{
     align-items: center;
 }
 .jian{
-    padding-top:50px ;
+    padding-top:180px ;
 }
 .logoshow{
     width: 100%;
@@ -95,7 +129,7 @@ a{
 }
 
 .shouyedaohang{
-
+    background-color: #fff;
 }
 .grid{
 
@@ -187,7 +221,7 @@ a{
     font-size: 15px;
     display: flex;
     flex-direction: row;
-    padding: 0 12px;
+    padding: 5px 17px 5px 17px;
     align-items: center;
     background-color: #fff!important;
     -webkit-tap-highlight-color: rgba(255,0,0,0);
@@ -195,7 +229,6 @@ a{
     box-sizing: border-box;
     line-height: 1.6;
     font-family: -apple-system-font,Helvetica Neue,sans-serif;
-    margin: 5px;
 }
 .goumais{
     flex: 1;
@@ -233,6 +266,7 @@ a{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
 }
 .bdgz .item{
     background: #F7F7F7;
@@ -350,10 +384,11 @@ a{
     color: #333!important;
     font-weight: 700;
     margin-top: 0.77em;
-    margin-bottom: 10px;
     font-size: 15px;
     align-items: center;
-    padding: 10px 15px 0px 15px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fff;
+
 }
 .fuwuname_right{
     font-size: 12px!important;
@@ -386,7 +421,7 @@ a{
     box-sizing: border-box;
 }
 .allfuwu{
-
+    background-color: #fff;
 }
 .fuwu{
     position: relative;
@@ -431,14 +466,15 @@ a{
 
 .fuwucontent{
     height: 100%;
-    margin: 2% 5% 0% 5%;
-
+    margin: 0% 5% 0% 5%;
+    padding-top: 30px;
 }
 .fuwucontentmsg:first-child{
     color: #c5282b;
     font-size: 15px;
 }
 .fuwucontentmsg:nth-child(2){
+    margin-top: 3px;
     color: #9b9b9b;
     font-size: 13px;
 }
@@ -450,29 +486,191 @@ a{
     line-height: 1.9999;
     font-size: 13px;
     margin-left: 3px;
+    margin-top: 15px;
     border-width: 0;
     outline: 0;
     border-radius: 5px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: hidden;
 }
+.abouthuanuo{
+    border-bottom: 1px solid rgb(245, 245, 245);
+    color: #333!important;
+    margin-top: 0.77em;
+    font-weight: 700;
+    font-size: 15px!important;
+    margin-bottom: 0!important;
+    padding: 10px 15px 10px 15px;
+    align-items: center;
+    display: flex;
+    background-color: #fff!important;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    outline: none;
+    box-sizing: border-box;
+}
+.huanuocontent{
+    height: 150px;
+    width: 100%;
+    background-color: #fff!important;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    outline: none;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contentimg{
+    width: 110px;
+    height: 110px;
+    padding: 3%;
+}
+.contentcontent{
+  margin-right: 5%;
 
+}
+.allxunxi{
+    background-color: #fff;
+}
+.xunxi{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 4.1rem;
+    width: 100%;
+}
+.xunxi::after{
+    content: " ";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    color: #000000;
+    border-bottom: 1px solid rgba(217, 217, 217, 0.6);
 
+}
 
+.xunxicontent{
+    margin-left: 3%;
+    height: 100%;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.xunxiimg{
+    height: 75%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.xunxi_title{
+    color: rgba(45, 46, 70, 0.8);
 
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+    padding-bottom: 5%;
+}
+.xunxibotom{
+    color: #b2b4c6;
+    line-height: 1.6;
+    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+    font-size: 14px;
+}
+.xunxibotom span:nth-child(2){
+    margin-left: 20%;
+}
+.zhenduan{
+    min-height: 6.5rem;
+    width: 100%;
+    background-color: #fff;
 
+}
+.zhenduaninput{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.iconzhenduan{
+    text-align: center;
+    border-right: none;
+    float: left;
+    height: 37px;
+    margin-top: 2px;
+    line-height: .6rem;
+    box-sizing: border-box;
+    text-align: center;
+    width: 70%;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
+}
+.inputset{
+    display: inline-block;
+    flex: 1;
+    height: 34px;
+    margin-bottom: 2px;
+}
+input{
+    height: 100%;
+    float: left;
+    padding: 0;
+    border: 1px solid #999;
+    border-radius: 0 .06rem .06rem 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
+    line-height: normal;
+    width: 100%;
+}
+.inputsent{
+    border: 1px solid #4cae4c;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #5cb85c;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+.msgarea{
+    min-height: 3rem;
+    width: 92%;
+    margin: 3%;
+    background-color: #fff;
+    border: 2px solid #ccccce;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
+}
+.msgcontent{
+    color: #a7a7a7;
+    font-size: 15px;
+    width: 95%;
+    height: 90%;
 
+}
 
+.msgcontenthas{
+    color: #404040;
+    font-size: 13px;
+    width: 95%;
+    height: 90%;
 
-
-
-
-
-
+}
 
 
 

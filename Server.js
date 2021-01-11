@@ -1,7 +1,20 @@
-let socket = io("http://localhost:3000");
-
+var socket = io("http://192.168.1.103:3000");
+window.addEventListener('message',function (e){
+    console.log(e.data.hangye)
+    if (e.data.hangye!=undefined){
+        questsent(e.data.hangye);
+    }
+})
+socket.emit("chatmessage","userconnect");
 socket.on('chatmessage', (data) => {
     showcontent(data,"operator","华诺社保-小鱼 15713868295（同微信）","1999");
+    var cmd = {"msg": ""};
+    window.parent.postMessage(cmd, '*');
+});
+
+socket.on('hangyemessage', (data) => {
+    var cmd = {"hangye": "陈**为您解答:"+data};
+    window.parent.postMessage(cmd, '*');
 });
 socket.on('receiveImg', (data) => {
     let ImgDIV = document.createElement('div');
@@ -9,6 +22,9 @@ socket.on('receiveImg', (data) => {
     showbox.appendChild(ImgDIV);
 })
 
+function questsent(msg){
+    socket.emit("hangyemessage",msg);
+}
 let sendImg = () => {
     let Imginput = document.getElementById('tupian');
     let file = Imginput.files[0];       //得到该图片
