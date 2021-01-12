@@ -1,21 +1,16 @@
-
-
-
-var chat;
-var chatred;
 var chatnum=0;
 var ischat=false;
 function clickChat(){
     hideRed();
-    chat.className="chatshow";
+    chatic.className="chatshow";
     ischat=true;
     setTimeout(function (){
-        chat.className+=" chatUp";
+        chatic.className+=" chatUp";
     },100)
 }
 function closeChat(){
     chatnum=0;
-    chat.className="chatshow";
+    chatic.className="chatshow";
     ischat=false;
     console.log("hide");
 }
@@ -24,11 +19,8 @@ function hasChat(){
     if (ischat==true){
         return  ;
     }
-    if ( chatred.className!="haschat"){
-        chatred.className="haschat";
-    }
     chatnum+=1;
-    chatred.innerHTML=chatnum;
+    chatimg.innerHTML=chatnum;
 }
 setTimeout(function (){
     hasChat();
@@ -36,7 +28,5 @@ setTimeout(function (){
 function hideRed(){
 
     chatnum=0;
-    chatred.innerHTML="";
-
-    chatred.className="hide";
+    chatimg.innerHTML=" <img src=\"ChatM3Img/img-info24.svg\" style=\"height: 50%;width: 50%\" id=\"chatnum\" >";
 }

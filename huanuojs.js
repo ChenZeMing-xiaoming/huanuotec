@@ -7,7 +7,7 @@ var xuanchuan;
 var startx ;
 var starty ;
 var goumais;
-
+var chatimg;
 var topname;
 
 var phonenuber=new Array("198****1500","166****3909","182****8867","172****6430","134****6413","165****5392 ","136****8384","139****2773","170****9675","134****2087","184****5280","180****5048","198****1500");
@@ -18,17 +18,20 @@ window.onload=function (){
   xuanchuan=document.getElementById("xuanchuan");
   goumais=document.getElementById("goumais");
   topname=document.getElementById("top").className;
-  chat=document.getElementById("chat");
-  chatred=document.getElementById("chatnum");
+  chatic=document.getElementById("chat");
+  chatimg=document.getElementById("chatimg");
   window.addEventListener('message', function (e) {
-    console.log(e.data);
+    console.log(e.data.hangye);
+    if(e.data.hangye!=undefined){
+      document.getElementById("msgarea").innerHTML=e.data.hangye;
+      document.getElementById("msgarea").className="msgcontenthas";
+    }
     if (e.data.post=="hide"){
       closeChat();
     }
     if (e.data.msg!=undefined){
       hasChat();
       console.log(e.data);
-
     }
   })
   xuanchuan.addEventListener("touchstart", function(e){
@@ -151,8 +154,18 @@ function start_next_index(index){
     xuanchuan.className="xuanchuan"+index;
   now_index=index;
 }
+var senttimes=0;
+function hangyesent(){
+  var cmd = {"hangye":   document.getElementById("input").value};
+  document.getElementById("input").value=null;
+  chat.window.postMessage(cmd, '*');
 
+  if (senttimes==0){
+    document.getElementById("msgarea").innerHTML="行业人士正在赶来的路上，请您稍作等候哦";
+  }
+  senttimes++;
 
+}
 
 
 
