@@ -161,7 +161,7 @@ function hangyesent(){
   chat.window.postMessage(cmd, '*');
 
   if (senttimes==0){
-    document.getElementById("msgarea").innerHTML="行业人士正在赶来的路上，请您稍作等候哦";
+    document.getElementById("msgarea").innerHTML="行业人士正在积极的赶来！ 请您稍等片刻";
   }
   senttimes++;
 
