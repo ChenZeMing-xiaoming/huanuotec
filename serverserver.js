@@ -1,7 +1,10 @@
 let socket = io("http://192.168.1.103:3001");
 
 socket.on('chatmessage', (data) => {
-    anlizeMsgOrnew(data);
+    anlizeMsgOrnew(data,"operator");
+});
+socket.on('hangyemessage', (data) => {
+    anlizeMsgOrnew(data,"hangye");
 });
 socket.on('receiveImg', (data) => {
     let ImgDIV = document.createElement('div');

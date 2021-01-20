@@ -1,0 +1,145 @@
+body{
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #f7f7f9;
+}
+.my{
+
+}
+.hide{
+    display: none;
+}
+.top{
+    position: fixed;
+    border-bottom: 1px solid rgb(245, 245, 245);
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    height: 2.3rem;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top_left{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #2d2e46;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+    top: 18px;
+    left: 1rem;
+}
+.titlepannel{
+    top:calc(2.3rem + 1px) ;
+    position: absolute;
+    height: calc(100% - 2.3rem - 1px);
+    width: 25%;
+    left: 0;
+    overflow: auto;
+
+}
+.titleall{
+  transition: all 1s ease-in-out;
+}
+.title{
+    font-weight: bolder;
+    color: black;
+    width: 100%;
+    font-size: .7rem;
+    height: 3.5rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.title_active{
+    background-color: #ffffff;
+}
+.title_childs{
+    width: 100%;
+    font-size: .5rem;
+}
+.child{
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:calc( 100% - 2px);
+}
+
+.child_active{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+
+}
+
+.content{
+    top:calc(2.3rem + 1px) ;
+
+    position: absolute;
+    left: 25%;
+    height: calc(100% - 2.3rem - 1px);
+    width: 75%;
+    background: #FFFFFF;
+}
+.content_item{
+    width: 100%;
+    height: 100%;
+
+}
+.chatimg{
+    position: fixed;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.1em 0.6em 0px, rgba(0, 0, 0, 0.09) 0px 0.2em 3.2em 0px;
+    background: rgb(80, 134, 250);
+    height: 60px;
+    width:  60px;
+    border-radius: 50%;
+    font-size: .9rem;
+    margin-left: 0px;
+    margin-top: 0px;
+    left: 82.5%;
+    bottom: 12% ;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+.haschat{
+    display: block;
+}
+.chathide{
+    display: none;
+}
+.chatshow{
+    z-index: 4;
+    position: fixed;
+    height: 80%;
+    bottom: -80%;
+    width: 100%;
+    left: 0;
+    transition: all  .7s ease-in-out;
+}
+.chatUp{
+    z-index: 4;
+    position: fixed;
+    height: 80%;
+    bottom:0;
+    width: 100%;
+    left: 0;
+
+}

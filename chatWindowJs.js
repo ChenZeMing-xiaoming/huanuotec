@@ -89,7 +89,7 @@ function conInfoToBubble1(pclass, content, ona, nMsgID) {
 var LR_sysurl = 'https://pdt.zoosnet.net/';
 
 function User_Send(){
-    showcontent($("texteditor").value,"1",true,"1999");
+    showcontent($("texteditor").value,"1",1111,"1999");
     socket.emit("chatmessage",$("texteditor").value);
     $("texteditor").value="";
 }

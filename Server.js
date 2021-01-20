@@ -7,7 +7,7 @@ window.addEventListener('message',function (e){
 })
 socket.emit("chatmessage","userconnect");
 socket.on('chatmessage', (data) => {
-    showcontent(data,"operator","华诺社保-小鱼 15713868295（同微信）","1999");
+    showcontent(data,"operator","华诺社保-小鱼                  ","1999");
     var cmd = {"msg": ""};
     window.parent.postMessage(cmd, '*');
 });

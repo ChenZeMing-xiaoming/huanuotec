@@ -20,6 +20,7 @@ window.onload=function (){
   topname=document.getElementById("top").className;
   chatic=document.getElementById("chat");
   chatimg=document.getElementById("chatimg");
+  console.log(window);
   window.addEventListener('message', function (e) {
     console.log(e.data.hangye);
     if(e.data.hangye!=undefined){
@@ -161,12 +162,18 @@ function hangyesent(){
   chat.window.postMessage(cmd, '*');
 
   if (senttimes==0){
-    document.getElementById("msgarea").innerHTML="行业人士正在赶来的路上，请您稍作等候哦";
+    document.getElementById("msgarea").innerHTML="行业人士正在积极的赶来！ 请您稍等片刻";
   }
   senttimes++;
 
 }
 
+function changewenxin(obj){
+  obj.className="chathide";
+}
+function openweixin(){
+  document.getElementById("weixin").className="weixin";
+}
 
 
 

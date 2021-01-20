@@ -264,6 +264,9 @@ ol, ul, li, dl, dt, dd {
     margin-top:1px;
     border-radius:18px
 }
+.changecolor{
+    color: rgb(255, 0, 0);
+}
 .msg-agent .bubble,.msg-agent .photo {
     float:left;
     width:auto;

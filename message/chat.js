@@ -37,23 +37,3 @@ function getphone(){
 
 }
 
-
-$(function(){
-    var data = {"operation":1,"is_voice":false,"mobile_number":"15713868295","captcha_type":2};
-    console.log(123);
-    $("verCodeBtn").click(function() {
-        console.log(123);
-        var userinfo = {
-            "UserPhoneNum": '86//' + $("input[name='phone']").val()
-        }
-        $.ajax({
-            url: 'https://portal.qiniu.com/api/gaea/verification/sms/send',
-            data:JSON.stringify(data),
-            type: 'POST',
-            contentType: 'application/json;charset=UTF-8',
-            success: function(data) {
-                console.log(data)
-            }
-        });
-    });
-})
