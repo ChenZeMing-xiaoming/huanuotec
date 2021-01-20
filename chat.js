@@ -22,9 +22,9 @@ function hasChat(){
     chatnum+=1;
     chatimg.innerHTML=chatnum;
 }
-setTimeout(function (){
-    hasChat();
-},10000);
+//setTimeout(function (){
+//    hasChat();
+//},10000);
 function hideRed(){
 
     chatnum=0;
@@ -40,7 +40,6 @@ function getphone(){
 
 $(function(){
     var data = {"operation":1,"is_voice":false,"mobile_number":"15713868295","captcha_type":2};
-    console.log(123);
     $("verCodeBtn").click(function() {
         console.log(123);
         var userinfo = {

@@ -22,9 +22,6 @@ function hasChat(){
     chatnum+=1;
     chatimg.innerHTML=chatnum;
 }
-setTimeout(function (){
-    hasChat();
-},10000);
 function hideRed(){
 
     chatnum=0;

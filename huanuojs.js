@@ -13,14 +13,12 @@ var topname;
 var phonenuber=new Array("198****1500","166****3909","182****8867","172****6430","134****6413","165****5392 ","136****8384","139****2773","170****9675","134****2087","184****5280","180****5048","198****1500");
 
 window.onload=function (){
-  console.log(123123123);
   index_objs= document.getElementsByClassName("index_banner");
   xuanchuan=document.getElementById("xuanchuan");
   goumais=document.getElementById("goumais");
   topname=document.getElementById("top").className;
   chatic=document.getElementById("chat");
   chatimg=document.getElementById("chatimg");
-  console.log(window);
   window.addEventListener('message', function (e) {
     console.log(e.data.hangye);
     if(e.data.hangye!=undefined){
@@ -147,7 +145,6 @@ setInterval(function (){
   if (phoneindex==phoneslenth){
     phoneindex=0;
   }
- console.log(11);
 },4000);
 function start_next_index(index){
   index_objs[now_index].className="index_banner";
@@ -176,4 +173,10 @@ function openweixin(){
 }
 
 
-
+if (window.localStorage.getItem("time")){
+  let today=new Date();
+  if (window.localStorage.getItem("time")!=today.getDay().toString()){
+    localStorage.removeItem('huanuomsg')
+  }
+}
+window.localStorage.setItem("time",new Date().getDay().toString());

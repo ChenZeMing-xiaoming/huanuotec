@@ -26,6 +26,18 @@ window.onload=function (){
     console.log(request.id)
 
     Anlized(request.id);
+
+    window.addEventListener('message', function (e) {
+        console.log(e.data.hangye);
+
+        if (e.data.post=="hide"){
+            closeChat();
+        }
+        if (e.data.msg!=undefined){
+            hasChat();
+            console.log(e.data);
+        }
+    })
 }
 var checktimes=1;
 function goback(){

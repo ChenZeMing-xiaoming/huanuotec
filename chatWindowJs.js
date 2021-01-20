@@ -15,6 +15,21 @@ function initEmotionMap() {
     }
 }
 initEmotionMap();
+window.onload=function (){
+    if (window.localStorage.getItem("huanuomsg"))
+    {
+        let msgs= window.localStorage.getItem("huanuomsg").split("○");
+        for (let i = 0; i < msgs.length; i++) {
+            if (msgs[i].match("★")){
+                showcontent(msgs[i].replace("★",""),"operator","华诺社保-小鱼                  ","1999");
+            }
+            else if(msgs[i]!="null") {
+                showcontent(msgs[i],"1",1111,"1999");
+            }
+
+        }
+    }
+}
 
 function showcontent(m, t, ona, nMsgID) {
     var temphtml = m;
@@ -25,8 +40,6 @@ function showcontent(m, t, ona, nMsgID) {
         var value = emotionMap.Values[i];
         temphtml = temphtml.replace(new RegExp(key, "gm"), '<img height="64" width="64" src="' + LR_sysurl + "LR/" + value + '">');
     }
-    console.log(temphtml);
-    console.log(m);
     var m1 = conInfoToBubble1(t,temphtml, ona, nMsgID);
     $("chatMessageArea").innerHTML += m1;
     scrollPage();
@@ -37,7 +50,6 @@ function scrollPage() {
     $("texteditor").scrollIntoView(false);
 }
 function conInfoToBubble1(pclass, content, ona, nMsgID) {
-    console.log(nMsgID);
     if (content.replace(/[\s\u3000]*/g, "") == "") return "";
     var str = "";
     if (pclass == "prologue") {
@@ -63,7 +75,6 @@ function conInfoToBubble1(pclass, content, ona, nMsgID) {
         str = '<div class="msg-box" ' + strMsgIDHtml + '>';
         str += '<div class="msg-agent">';
         if (v3 != "") str += '<div class="agent-avatar"><img src="' + v3 + '"></div>';
-        console.log(v3);
         str += '<div class="arrow_box_left" style="margin-left:' + (v3 != "" ? "50" : "14") + 'px;">   ' + (ona ? '<div class="text1">' + ona + "</div>" : "") + '<div class="text">';
         str += content;
         str += "</div></div>";
@@ -91,6 +102,7 @@ var LR_sysurl = 'https://pdt.zoosnet.net/';
 function User_Send(){
     showcontent($("texteditor").value,"1",1111,"1999");
     socket.emit("chatmessage",$("texteditor").value);
+    window.localStorage.setItem("huanuomsg",window.localStorage.getItem("huanuomsg")+"○" + $("texteditor").value)
     $("texteditor").value="";
 }
 function inputFocus() {
@@ -237,3 +249,4 @@ function hideme() {
     var cmd = {"post": "hide"};
     window.parent.postMessage(cmd, '*');
 }
+
